@@ -17,10 +17,13 @@ export default function Courses() {
   }, [query])
 
   return (
-    <div className="py-4">
-      <h2 className="text-xl font-semibold mb-4">Courses</h2>
+    <div className="py-8">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-2">Our Courses</h1>
+        <p className="text-lg text-gray-600 mb-8">Find the perfect course for you.</p>
+      </div>
       <CourseFilters onChange={setQuery} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map(c => (<CourseCard key={c._id} course={c} />))}
       </div>
     </div>

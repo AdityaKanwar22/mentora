@@ -12,11 +12,13 @@ export default function CourseFilters({ onChange, initial }) {
   }, [q, category, minPrice, maxPrice])
 
   return (
-    <div className="flex flex-wrap gap-2 items-center mb-4">
-      <input className="border rounded p-2 flex-1 min-w-[200px]" placeholder="Search" value={q} onChange={e => setQ(e.target.value)} />
-      <input className="border rounded p-2 w-40" placeholder="Category" value={category} onChange={e => setCategory(e.target.value)} />
-      <input className="border rounded p-2 w-28" placeholder="Min price" value={minPrice} onChange={e => setMinPrice(e.target.value)} />
-      <input className="border rounded p-2 w-28" placeholder="Max price" value={maxPrice} onChange={e => setMaxPrice(e.target.value)} />
+    <div className="bg-white p-4 rounded-lg shadow-sm mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <input className="form-input" placeholder="Search by keyword" value={q} onChange={e => setQ(e.target.value)} />
+        <input className="form-input" placeholder="Category" value={category} onChange={e => setCategory(e.target.value)} />
+        <input type="number" className="form-input" placeholder="Min price" value={minPrice} onChange={e => setMinPrice(e.target.value)} />
+        <input type="number" className="form-input" placeholder="Max price" value={maxPrice} onChange={e => setMaxPrice(e.target.value)} />
+      </div>
     </div>
   )
 }
